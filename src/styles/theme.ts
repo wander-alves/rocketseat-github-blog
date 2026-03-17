@@ -11,10 +11,10 @@ export const defaultTheme = {
   'base-input': '#040F1A',
   'brand-blue': '#3294F8',
 
-  'font-title-l': '2.4rem/1.3 "Nunito",sans-serif',
-  'font-title-m': '2.0rem "Nunito",sans-serif',
-  'font-title-s': '1.8rem "Nunito",sans-serif',
+  'font-title-l': '700 2.4rem/1.3 "Nunito",sans-serif',
+  'font-title-m': '700 2.0rem "Nunito",sans-serif',
+  'font-title-s': '700 1.8rem "Nunito",sans-serif',
   'font-text-m': '1.6rem "Nunito",sans-serif',
   'font-text-s': '1.4rem "Nunito",sans-serif',
-  'font-component-link': '1.2rem "Nunito",sans-serif',
+  'font-component-link': '700 1.2rem "Nunito",sans-serif',
 } as const;
