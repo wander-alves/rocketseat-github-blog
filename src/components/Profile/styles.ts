@@ -66,28 +66,23 @@ export const ProfileTitle = styled.div`
   }
 `;
 
-export const ProfileLinks = styled.div`
+export const ProfileItemsList = styled.div`
   display: flex;
   gap: 2.4rem;
-
-  > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-
-    text-decoration: none;
-
-    font: ${({ theme }) => theme['font-text-m']};
-    transition: opacity 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    > img {
-      height: 1.8rem;
-      width: 1.8rem;
-    }
-  }
 `;
+
+export const ProfileItem =styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  text-decoration: none;
+
+  font: ${({ theme }) => theme['font-text-m']};
+
+  > img {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+`

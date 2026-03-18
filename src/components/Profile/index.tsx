@@ -1,7 +1,8 @@
 import {
   ProfileContainer,
+  ProfileItemsList,
   ProfileInfoContainer,
-  ProfileLinks,
+  ProfileItem,
   ProfileTitle,
 } from './styles';
 
@@ -31,20 +32,20 @@ function Profile() {
           viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
           pulvinar vel mass.
         </p>
-        <ProfileLinks>
-          <a href="#">
+        <ProfileItemsList>
+          <ProfileItem>
             <img src={githubImg} alt="Github" />
             cameronwll
-          </a>
-          <a href="#">
+          </ProfileItem>
+          <ProfileItem>
             <img src={buildingImg} alt="Work at" />
             Rocketseat
-          </a>
-          <a href="#">
+          </ProfileItem>
+          <ProfileItem>
             <img src={usersImg} alt="Followers" />
             32 seguidores
-          </a>
-        </ProfileLinks>
+          </ProfileItem>
+        </ProfileItemsList>
       </ProfileInfoContainer>
     </ProfileContainer>
   );
