@@ -10,4 +10,5 @@ export const MainContainer = styled.main`
   flex-direction: column;
 
   padding-inline: 28.8rem;
+  padding-bottom: 4.8rem;
 `;
