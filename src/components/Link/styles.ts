@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-type LinkContainerProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
-
-export const LinkContainer = styled.a<LinkContainerProps>`
+export const LinkContainer = styled(Link)`
   height: 2rem;
 
   font: ${({ theme }) => theme['font-component-link']};
