@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ProfileContainer = styled.div`
   background-color: ${({ theme }) => theme['base-profile']};
   display: flex;
-  align-items: flex-end;
   gap: 3.2rem;
   width: 100%;
   max-width: 86.4rem;
@@ -19,14 +18,13 @@ export const ProfileContainer = styled.div`
 
 export const ProfileInfoContainer = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-
-  > p {
+  justify-content: space-between;
+  
+  & > div > p {
     font: ${({ theme }) => theme['font-text-m']};
-    margin-bottom: 2.4rem;
   }
 `;
 

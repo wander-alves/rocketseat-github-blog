@@ -1,15 +1,10 @@
+import type { LinkProps } from 'react-router-dom'
 import { LinkContainer } from './styles';
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  imgSrc: string;
-  imgAlt: string;
-  content: string;
-}
-export function Link({ imgAlt, imgSrc, content, ...props }: LinkProps) {
+export function Link({ children, ...props }: LinkProps) {
   return (
     <LinkContainer {...props}>
-      {content}
-      <img src={imgSrc} alt={imgAlt} />
+      {children}
     </LinkContainer>
   );
 }

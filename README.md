@@ -8,13 +8,13 @@ Projeto da trilha de React da Rocketseat focada em consumo de API e performance 
 ### Requisitos
 
 **Funcionalidades base**
-- [ ] Busca de dados do perfil do GitHub
+- [x] Busca de dados do perfil do GitHub
 - [ ] Listar as issues de um repositório e permitir filtrar elas por texto
 - [ ] Visualização dos detalhes de uma issue em uma rota dedicada
 
 **Requisitos obrigatórios**
 - Perfil
-  - [ ] Buscar dados na API de usuários do GitHub: `GET https://api.github.com/users/{username}`
+  - [x] Buscar dados na API de usuários do GitHub: `GET https://api.github.com/users/{username}`
   - [ ] Exibir avatar, nome, bio, username, quantidade de seguidores e link para o GitHub.
 - Lista de posts (issues) + busca
   - [ ] Criar um repositório público e utilizar issues como posts.
