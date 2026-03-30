@@ -10,9 +10,8 @@
     "lint:fix": "eslint --fix .",
     "preview": "vite preview"
   },
-    "devDependencies": {
+  "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
@@ -27,8 +26,10 @@
     "vite": "^7.2.4"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.13.1",
     "styled-components": "5.3.5"
   }
