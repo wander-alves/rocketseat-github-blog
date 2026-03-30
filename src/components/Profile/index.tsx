@@ -13,6 +13,7 @@ import githubImg from '../../assets/github-brands.svg';
 import buildingImg from '../../assets/building-solid.svg';
 import usersImg from '../../assets/user-group-solid.svg';
 import { useEffect, useState } from 'react';
+import { getProfileInfo } from '../../utils/api';
 
 function Profile() {
   const [profileURL, setProfileURL] = useState('');
@@ -24,8 +25,7 @@ function Profile() {
   const [company, setCompany] = useState('');
 
   async function retrieveProfileInfo(){
-    const response = await fetch("https://api.github.com/users/wander-alves")
-    const body = await response.json();
+    const body = await getProfileInfo();
     
     setUsername(body.login);
     setFollowersCount(body.followers);
