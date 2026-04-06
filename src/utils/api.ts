@@ -1,4 +1,5 @@
 const profileURL = `https://api.github.com/users/wander-alves`;
+const repositorySearchIssuesURL = `https://api.github.com/search/issues`;
 const repositoryIssuesURL = `https://api.github.com/repos/wander-alves/rocketseat-github-posts/issues`;
 
 async function getProfileInfo () {
@@ -8,11 +9,14 @@ async function getProfileInfo () {
   return body;
 }
 
-async function getRepositoryIssues() {
-  const response = await fetch(repositoryIssuesURL)
+async function getRepositoryIssues(query: string = "") {
+  const requestURL = new URL(repositorySearchIssuesURL);
+  requestURL.searchParams.set('q', `${query} repo:wander-alves/rocketseat-github-posts`);
+
+  const response = await fetch(requestURL);
   const body = await response.json();
 
-  return body;
+  return body.items;
 }
 
 async function getRepositoryIssueDetails(id: string) {
