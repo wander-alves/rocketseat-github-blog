@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { DefaultLayout } from './layout/DefaultLayout';
 import { Home } from './pages/Home';
-import { PostDetails } from './components/PostDetails';
+import { PostDetails } from './pages/PostDetails';
 
 export function Router() {
   return (
