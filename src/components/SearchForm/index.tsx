@@ -1,17 +1,17 @@
-import { useState } from 'react';
 import { SearchFormContainer, SearchFormTitle } from './styles';
 
-export function SearchForm() {
-  const [query, setQuery] = useState('');
+interface SearchFormProps { 
+  postsCount: number;
+  handleQuery: (query: string) => void;
+  query: string;
+} 
 
-  function handleQuery(content: string) {
-    setQuery(content);
-  }
+export function SearchForm({ postsCount, handleQuery, query }: SearchFormProps) {
   return (
     <SearchFormContainer>
       <SearchFormTitle>
         <strong>Publicações</strong>
-        <span>6 publicações</span>
+        <span>{ postsCount } publicações</span>
       </SearchFormTitle>
       <input
         type="text"
