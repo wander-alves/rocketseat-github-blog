@@ -9,46 +9,44 @@ Projeto da trilha de React da Rocketseat focada em consumo de API e performance 
 
 **Funcionalidades base**
 - [x] Busca de dados do perfil do GitHub
-- [ ] Listar as issues de um repositório e permitir filtrar elas por texto
-- [ ] Visualização dos detalhes de uma issue em uma rota dedicada
+- [x] Listar as issues de um repositório e permitir filtrar elas por texto
+- [x] Visualização dos detalhes de uma issue em uma rota dedicada
 
 **Requisitos obrigatórios**
 - Perfil
   - [x] Buscar dados na API de usuários do GitHub: `GET https://api.github.com/users/{username}`
-  - [ ] Exibir avatar, nome, bio, username, quantidade de seguidores e link para o GitHub.
+  - [x] Exibir avatar, nome, bio, username, quantidade de seguidores e link para o GitHub.
 - Lista de posts (issues) + busca
-  - [ ] Criar um repositório público e utilizar issues como posts.
-  - [ ] Fazer busca paginada pela API: 
-    - `GET https://api.github.com/search/issues?q={query}` repo:{username}/{repo}
-    - `GET https://api.github.com/{username}/{repo}/issues?q={query}`
+  - [x] Criar um repositório público e utilizar issues como posts.
+  - [x] Fazer busca paginada pela API: 
+    - `GET https://api.github.com/search/issues?q={query} repo:{username}/{repo}`
     - Quando não localizar um termo, ela deve exibir a lista das últimas issues do repositório.
-  - [ ] Renderizar cards com: Título, data relativa, resumo do corpo (primeiras linhas) e metadados (comentários, etc).
-  - [ ] Campo de busca que consuta a Search API (debounce recomendado)
+  - [x] Renderizar cards com: Título, data relativa, resumo do corpo (primeiras linhas) e metadados (comentários, etc).
+  - [x] Campo de busca que consuta a Search API (debounce recomendado)
 - Post (issue) completo
-  - [ ] Rota dinâmica (ex.: `/post/:number`)
-  - [ ] Buscar via GitHub Issues API:
+  - [x] Rota dinâmica (ex.: `/post/:number`)
+  - [x] Buscar via GitHub Issues API:
     - `GET https://api.github.com/repos/{username}/{repo}/issues/{issues}`
-  - [ ] Renderizar o corpo em Markdown -> HTML (ex.: `react-markdown` + plugins).
-  - [ ] Cabeçalho do post: título, link "ver no GitHub", data, autor, contagem de comentários.
+  - [x] Renderizar o corpo em Markdown -> HTML (ex.: `react-markdown` + plugins).
+  - [x] Cabeçalho do post: título, link "ver no GitHub", data, autor, contagem de comentários.
 - Limites e erros da API
-  - [ ] Tratar **rate limit** (mensagem amigável e fallback)
-  - [ ] Exibir estados de loading e erro nas requisições
-  - [ ] Opcional: configurar **token pessoal** para elevar limites (header `Authorization: token`)
+  - [x] Tratar **rate limit** (mensagem amigável e fallback)
+  - [x] Exibir estados de loading e erro nas requisições
 - Roteamento e acessibilidade
-  - [ ] React Router (para rotas Home e Post)
-  - [ ] Links e botões com rótulos acessíveis; contraste e foco visível.
-  - [ ] Navegação de retorno ("Voltar") no detalhe do post.
+  - [x] React Router (para rotas Home e Post)
+  - [x] Links e botões com rótulos acessíveis; contraste e foco visível.
+  - [x] Navegação de retorno ("Voltar") no detalhe do post.
 
 ### Tasks
 
 - [x] Criar projeto com Vite + React + TypeScript
-- [ ] Criar página Home
-- [ ] Criar página Issue
-- [ ] Configurar rotas no `react-router-dom`
-- [ ] Buscar dados do perfil usando GitHub Users API
-- [ ] Listar issues de um repositório via GitHub Search API
-- [ ] Exibir post completo via GitHub Issues API
-- [ ] Tratar rate limit da API
+- [x] Criar página Home
+- [x] Criar página Issue
+- [x] Configurar rotas no `react-router-dom`
+- [x] Buscar dados do perfil usando GitHub Users API
+- [x] Listar issues de um repositório via GitHub Search API
+- [x] Exibir post completo via GitHub Issues API
+- [x] Tratar rate limit da API
 
 ...
 
@@ -58,7 +56,6 @@ Projeto da trilha de React da Rocketseat focada em consumo de API e performance 
 - React (hooks, context API, state)
 - Vite
 - React Router DOM
-- Zod
 
 ...
 
