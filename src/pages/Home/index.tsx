@@ -8,6 +8,7 @@ import { getRepositoryIssues } from "../../utils/api";
 import { useDebounce } from "../../hooks/use-debounce";
 
 import { HomeContainer } from './styles';
+import { NotFound } from "../../components/NotFound";
 
 export function Home() {
   const [posts, setPosts] = useState<IssueProps[]>([]);
@@ -15,9 +16,9 @@ export function Home() {
   const [debouncedQuery] = useDebounce(query);
   async function handleQuery(){
     const results = await getRepositoryIssues(debouncedQuery);
-    setPosts(results)
+    setPosts(results);
   }
-
+  
   useEffect(()=> {
     handleQuery();
   }, [debouncedQuery])
@@ -25,12 +26,10 @@ export function Home() {
     <HomeContainer>
       <Main>
         <Profile />
-        <SearchForm 
-          postsCount={posts.length} 
-          handleQuery={setQuery} 
-          query={query}
-        />
-        <PostsList posts={posts}/>
+        <SearchForm postsCount={posts.length} handleQuery={setQuery} query={query} />
+        { posts.length === 0 
+        ? (<NotFound />) 
+        : (<PostsList posts={posts}/>)}
       </Main>
     </HomeContainer>
   );

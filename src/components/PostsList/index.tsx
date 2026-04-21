@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import { Post} from "../Post";
 import { PostsListContainer } from "./styles";
-import { getRepositoryIssues } from "../../utils/api";
 
-interface IssueProps {
+export interface IssueProps {
   number: number;
   url: string;
   title: string;
@@ -11,21 +9,16 @@ interface IssueProps {
   created_at: string;
 }
 
-export function PostsList (){
-  const [postsList, setPostsList] = useState<IssueProps[]>([]);
+interface PostListProps { 
+  posts: IssueProps[];
+}
 
-  async function getPostsList(){
-    const posts = await getRepositoryIssues();
-    setPostsList(posts);
-  }
-  
-  useEffect(()=>{
-    getPostsList();
-  }, [])
+export function PostsList ({ posts }: PostListProps){
   return (
     <PostsListContainer>
-      {postsList.map((post)=> (
+      {posts.map((post: IssueProps)=> (
         <Post
+          key={post.number}
           id={post.number}
           title={post.title}
           content={post.body}

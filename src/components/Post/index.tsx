@@ -1,6 +1,5 @@
-import { formatDistanceToNow } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import { PostContainer, PostTitle } from "./styles";
+import { getPtBRDateString } from '../../utils/date-formatter';
 
 interface PostProps {
   id: number;
@@ -10,10 +9,7 @@ interface PostProps {
 }
 
 export function Post({id, title, createdAt, content}: PostProps){
-  const formattedDate = formatDistanceToNow(createdAt, {
-    locale: ptBR,
-    addSuffix: true, 
-  }).replace('cerca de', '').replace('h', 'H');
+  const formattedDate = getPtBRDateString(createdAt);
   
   return (
     <PostContainer to={`/posts/${id}`}>
