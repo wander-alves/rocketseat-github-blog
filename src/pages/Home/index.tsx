@@ -13,15 +13,29 @@ import { NotFound } from "../../components/NotFound";
 export function Home() {
   const [posts, setPosts] = useState<IssueProps[]>([]);
   const [query, setQuery] = useState('');
+  const [rateLimit, setRateLimit] = useState(10);
   const [debouncedQuery] = useDebounce(query);
-  async function handleQuery(){
-    const results = await getRepositoryIssues(debouncedQuery);
+  async function handleQuery() {
+    let results;
+    
+    if(rateLimit>0){
+      results = await getRepositoryIssues(debouncedQuery);
+      setRateLimit((prev)=> prev - 1);
+    }
+
     setPosts(results);
   }
   
   useEffect(()=> {
     handleQuery();
-  }, [debouncedQuery])
+    const interval = setInterval(()=>{ 
+      setRateLimit(10)
+    }, 1000 * 60)
+
+    return ()=> {
+      clearInterval(interval);
+    }
+  }, [debouncedQuery]);
   return (
     <HomeContainer>
       <Main>
